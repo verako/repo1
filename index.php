@@ -56,12 +56,12 @@
           </ul>
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              <input type="text" placeholder="Login" class="form-control">
             </div>
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Войти</button>
+            <button type="submit" class="btn btn-success" name="vhod">Войти</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
