@@ -91,7 +91,7 @@
       } 
      ?>
     <footer>
-      <div class="container-fluid nnnn">
+      <div class="container-fluid">
           <div class="row">
             <div class="col-lg-2  col-md-1 col-sm-1 col-xs-0">
             </div>
