@@ -1,0 +1,122 @@
+html, body{
+	height: 100%;
+	margin: 0;
+}
+.container{
+	background: #B0FCF3;
+}
+.container-fluid .row {
+     margin-right: 0;
+     margin-left: 0; 
+     
+}
+.hed{
+ 	width: 100%;
+ 	box-sizing: border-box;
+ 	margin:-5px auto;
+  	padding: 0;
+ }
+.sections{
+	height: 30%;
+	margin: 0;
+}
+
+#section2{
+	background: url(images/sky.jpg) fixed no-repeat;
+	width: 100%;
+}
+#section1{
+	background: url(images/sk1y.jpg) fixed no-repeat;
+	width: 100%;
+}
+.top{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	display: none;
+}
+.jumbotron{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	position: relative;
+}
+.jumbotron p{
+	margin: 0;
+	padding: 10px;
+}
+.menu{
+	position: fixed;
+}
+
+.active{
+	background: #333;
+	color: #fff;
+	pointer-events:none;/*отключает клик по ссылке*/
+}
+/*.parallax{
+	position: absolute;
+}*/
+.gallery{
+	width: 100%;
+	//width: 1583px;
+	max-height: 300px;
+	height: auto;
+	position: relative;
+}
+.wrap{
+	//width: 462px;
+	max-height: 300px;
+	height: auto;
+	overflow: hidden;
+}
+
+.gallery ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 700%;
+	position: relative;
+}
+
+.gallery ul li{
+	float: left;
+}
+/*.gallery ul li>a>img{
+	max-width: 100%;
+	height: auto;
+}*/
+.navbar-inverse,.navbar-toggle{
+    background-color: #50ACA1;
+    border-color: #048071;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #048071;
+    background-color: #50ACA1;
+}
+.navbar-inverse .navbar-toggle {
+	background-color: #50ACA1;
+    border-color: #048071;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+   border-color: #048071;
+    background-color: #50ACA1;
+}
+.navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-brand {
+   color: #193532;
+}  
+
+.navbar-inverse .navbar-nav>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+    background: #193532;
+} 
+.btn-success,.btn-primary {
+    background-color: #2C5F59;
+    border-color: #193532;
+}
+.btn-success:hover, .btn-success:focus, .btn-primary:hover, .btn-primary:focus {
+    background-color: #0B8577;
+    border-color: #193532;
+}
+

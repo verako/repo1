@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.stars{
+		display: block;
+		position: relative;
+		height: 100px;
+		
+	}
+	.off{
+		display: block;
+		height: 20px;
+		width: 20px;
+		position: absolute;
+		background: url(star.png) 20px 0;
+	}
+	.on{
+		background-position:20px 20px;
+	}
+</style>
+<body>
+	<div id="stars">
+		<p id="star" style="display: none;">4</p>
+		<span id="st1" class="off" style="left: 10px"></span>
+		<span id="st2" class="off" style="left: 35px"></span>
+		<span id="st3" class="off" style="left: 60px"></span>
+		<span id="st4" class="off" style="left: 85px"></span>
+		<span id="st5" class="off" style="left: 110px"></span>
+	</div>
+	
+	<script src="jquery-3.1.0.min.js"></script>
+	<script src="stars.js"></script>
+</body>
+</html>
