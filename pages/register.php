@@ -1,7 +1,7 @@
 <div class="container">
 	<?php 
 	if (isset($_POST['adduser'])) {
-		if (register($_POST['login'],$_POST['pass'],$_POST['email'],$GLOBALS['avatar'])) {
+		if (register($_POST['login'],$_POST['pass'],$_POST['email'],$_FILES['avatar']['tmp_name'])) {
 			echo "<h3 style='color:green;'>OK</h3>";
 		}
 	

@@ -16,6 +16,7 @@ function connect(){
  	$email=trim(htmlspecialchars($email));
  	$file=fopen($image,'rb');//читаем содержимое бинарного файла
  	$binary=fread($file, filesize($image));
+ 	$binary=addslashes($binary);
  	fclose($file);//закрыли файл
  	if ($name=="" || $pass=="" || $email=="") {
  		echo "<h3 style='color:red'>Не все поля заполнены</h3>";
