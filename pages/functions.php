@@ -26,6 +26,7 @@ function connect(){
  		echo "<h3 style='color:red'>Не правильная длинна строки</h3>";
  		return false;
  	}
+ 	//в таблицу ролей добавить руками роли 2 - user, 1 - admin
  	$ins='insert into users (login, pass, email, roleid) value("'.$name.'","'.md5($pass).'","'.$email.'",2)';
  	connect();
  	mysql_query($ins);
@@ -59,5 +60,13 @@ function connect(){
  	}
  	else{
  		return false;
+ 	}
+ }
+ 
+ function getComments($hotelid){
+ 	$res=mysql_query('select *from Comments where hotelid='.$hotelid);
+ 	while ($row=mysql_fetch_array($res,MYSQL_NUM)) {
+ 		echo "<dt><div>".$row[3]."&nbsp;".$row[4]."</div></dt>";
+ 		echo "<dh><div>".$row[2]."</div></dh>";
  	}
  }

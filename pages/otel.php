@@ -108,7 +108,11 @@
         <div class="left col-lg-12  col-md-12 col-sm-12 col-xs-12">
             <div>
                 <h3>Отзывы:</h3>
-                <p>dhgjkdhgkjghkjfkhgkh</p>
+                <?php 
+                    connect();
+                    getComments(1);
+                ?>
+
             </div>
 
         </div>

@@ -41,6 +41,14 @@ $ct6='create table Users(id int not null auto_increment primary key,
 	avatar mediumblob,
 	phone varchar(32))
 	default charset="utf8"';//связь
+//комментарии
+$ct7='create table Comments(id int not null auto_increment primary key,
+	hotelid int,
+	foreign key(hotelid) references Hotels(id) on delete cascade,
+	text varchar(512) not null,
+	username varchar(32),
+	datein datetime)default charset="utf8"';
+
 //выполняем создание бд
 mysql_query($ct1);
 mysql_query($ct2);
@@ -48,6 +56,7 @@ mysql_query($ct3);
 mysql_query($ct4);
 mysql_query($ct5);
 mysql_query($ct6);//запрос соединения с $CTn
+mysql_query($ct7);
 $err=mysql_errno();//номер ошибки
 if ($err) {
 	echo "Error code:".$err.'<br>';
