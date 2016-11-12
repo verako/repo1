@@ -10,10 +10,13 @@ function connect(){
 	mysql_select_db($dbname) or die('не удалось подключиться к бд');
 	mysql_query("set names 'utf8'");
 }
- function register($name, $pass, $email){
+ function register($name, $pass, $email, $image){
  	$name=trim(htmlspecialchars($name));
  	$pass=trim(htmlspecialchars($pass));
  	$email=trim(htmlspecialchars($email));
+ 	$file=fopen($image,'rb');//читаем содержимое бинарного файла
+ 	$binary=fread($file, filesize($image));
+ 	fclose($file);//закрыли файл
  	if ($name=="" || $pass=="" || $email=="") {
  		echo "<h3 style='color:red'>Не все поля заполнены</h3>";
  		return false;
@@ -27,7 +30,8 @@ function connect(){
  		return false;
  	}
  	//в таблицу ролей добавить руками роли 2 - user, 1 - admin
- 	$ins='insert into users (login, pass, email, roleid) value("'.$name.'","'.md5($pass).'","'.$email.'",2)';
+ 	$ins='insert into users (login, pass, email, roleid, avatar) values
+ 	("'.$name.'","'.md5($pass).'","'.$email.'",2,"'.$binary.'")';
  	connect();
  	mysql_query($ins);
  	return true;

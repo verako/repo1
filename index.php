@@ -58,21 +58,21 @@
           </ul>
           <?php 
             //session_start();
-            connect();
-            if(isset($_SESSION["ruser"])){
+            //connect();
+           // if(isset($_SESSION["ruser"])){
             // вывод "Session is set"; // в целях проверки
             //header("Location: intropage.php"); <?php echo $_SESSION['ruser'];>!
-             echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
-             echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
-            }
-            if (isset($_POST['vhod'])) {
-             if (login($_POST['login'],$_POST['pass'])) {
+            // echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
+            // echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
+            //}
+            //if (isset($_POST['vhod'])) {
+           // if (login($_POST['login'],$_POST['pass'])) {
               //index.php?page=1
-               echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
-             echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
-               }
-             }
-            else{
+             //  echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
+            // echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
+             //  }
+            // }
+            //else{
             ?>
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
@@ -84,7 +84,7 @@
             <button type="submit" class="btn btn-success" name="vhod">Войти</button>
           </form>
           <?php 
-          }
+         // }
           ?>
         </div><!--/.navbar-collapse -->
       </div>
