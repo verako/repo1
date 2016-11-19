@@ -54,12 +54,12 @@ function connect(){
  		echo "<h3 style='color:red'>Не правильная длинна строки</h3>";
  		return false;
  	}
- 	$sel='select * from users where name="'.$name.'" and pass="'.md5($pass).'"';
+ 	$sel='select * from users where login="'.$name.'" and pass="'.md5($pass).'"';
  	connect();
  	$res=mysql_query($sel);
  	$row=mysql_fetch_array($res,MYSQL_NUM);
  	if ($row[1]==$name) {
- 		session_start();
+ 		//session_start();
  		$_SESSION['ruser']=$name;
  		return true;
  	}
@@ -71,7 +71,14 @@ function connect(){
  function getComments($hotelid){
  	$res=mysql_query('select *from Comments where hotelid='.$hotelid);
  	while ($row=mysql_fetch_array($res,MYSQL_NUM)) {
- 		echo "<dt><div>".$row[3]."&nbsp;".$row[4]."</div></dt>";
+ 	// 	$file = fopen("images/blob.jpg","w");
+		// echo fwrite($file,$row[5]);
+		// fclose($file);
+ 		// $pic='blob.php';
+ 		// if ($row[5]="") {
+ 		// 	$pic='foto.png';
+ 		// }
+ 		echo "<dt><div><img src='images/foto.png' style='width:50px'></div><div>".$row[3]."&nbsp;".$row[4]."</div></dt>";
  		echo "<dh><div>".$row[2]."</div></dh>";
  	}
  }

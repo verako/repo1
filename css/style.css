@@ -147,3 +147,22 @@ footer p{
 .on{
 	background-position:20px 20px;
 }
+.exit{
+	border:2px #2C5F59 solid;
+	color:white;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 2px;
+	background:#2C5F59;
+}
+.exit:hover{
+	text-decoration: none;
+	color: white;
+	background: #193532;
+}
+h4{
+	float: right;
+}
+.none{
+	display: none;
+}

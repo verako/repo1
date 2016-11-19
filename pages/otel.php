@@ -2,7 +2,17 @@
     <div class="row">
         <div class="left col-lg-9  col-md-9 col-sm-9 col-xs-12">
             <div id="idhotel">
-            <h1>HOTEL</h1></div>        
+            <h1>
+            <?php 
+                //include_once('functions.php');
+                connect();
+                $hoid=$_GET['hoid'];//id отеля
+                $res=mysql_query('select id,hotel,stars,cost,info from hotels where id='.$hoid);
+                while($row=mysql_fetch_array($res,MYSQL_NUM)){
+                    echo $row[1];
+                
+            ?>
+            </h1></div>        
             <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
                 <!-- Loading Screen -->
                 <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -83,10 +93,16 @@
        
         <div class="left col-lg-2  col-md-2 col-sm-2 col-xs-12" style="margin-left: 20px">
             <div style="margin-top: 70px"><h4>Цена за номер:</h4></div>
-            <div><h4>800$</h4></div>
+            <div><h4><?php 
+                echo $row[3];
+            ?></h4></div>
             <div><h4></h4></div>
             <div id="stars">
-                <p id="star" style="display: none;">4</p>
+                <p id="star" style="display: none;">
+                    <?php 
+                echo $row[2];
+                ?>
+                </p>
                 <span id="st1" class="off" style="left: 10px"></span>
                 <span id="st2" class="off" style="left: 35px"></span>
                 <span id="st3" class="off" style="left: 60px"></span>
@@ -99,7 +115,9 @@
         <div class="left col-lg-12  col-md-12 col-sm-12 col-xs-12">
             <div>
                 <h3>Информация об отеле:</h3>
-                <p>dhgjkdhgkjghkjfkhgkh</p>
+                <p><?php 
+                echo $row[4];}
+                ?></p>
             </div>
 
         </div>
@@ -110,7 +128,7 @@
                 <h3>Отзывы:</h3>
                 <?php 
                     connect();
-                    getComments(1);
+                    getComments($hoid);
                 ?>
 
             </div>

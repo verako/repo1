@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <!-- saved from url=(0041)http://bootstrap-3.ru/examples/jumbotron/ -->
 <html lang="ru">
@@ -34,9 +35,11 @@
 
   <body>
     <?php 
-    //session_start();
     $page=(isset($_GET['page']))?$_GET['page']:"1";
-    include_once('pages/functions.php');?>
+    //session_start();
+    include_once('pages/functions.php');
+    
+    ?>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -57,35 +60,31 @@
             <li <?php echo ($page==4)?'class="active"':'';?>><a href="index.php?page=4">Регистрация</a></li> 
           </ul>
           <?php 
-            //session_start();
-            //connect();
-           // if(isset($_SESSION["ruser"])){
-            // вывод "Session is set"; // в целях проверки
-            //header("Location: intropage.php"); <?php echo $_SESSION['ruser'];>!
-            // echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
-            // echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
-            //}
-            //if (isset($_POST['vhod'])) {
-           // if (login($_POST['login'],$_POST['pass'])) {
-              //index.php?page=1
-             //  echo "<h2>Добро пожаловать, <span>".$_SESSION['ruser'];."! </span></h2>";
-            // echo ' <p><a href="logout.php">Выйти</a> из системы</p>';
-             //  }
-            // }
-            //else{
-            ?>
-          <form class="navbar-form navbar-right" role="form">
+           //session_start();
+          connect();
+          if(isset($_SESSION["ruser"])){
+            echo "<h4>Добро пожаловать, <span>".$_SESSION['ruser']."! </span><a class='exit' href='pages/logout.php'>Выйти</a></h4>";
+          }
+          elseif (isset($_POST['vhod'])) {
+            if (login($_POST['login'],$_POST['pass'])) {
+              echo "<h4 style='float:left'>Добро пожаловать, <span>".$_SESSION['ruser']."! </span><a class='exit' href='pages/logout.php'>Выйти</a></h4>";
+               
+            }
+          }
+          ?>
+          <form class="navbar-form navbar-right" role="form" method="post">
             <div class="form-group">
-              <input type="text"  value="login" placeholder="Login" class="form-control">
+              <input type="text"  name="login" placeholder="Login" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" value="pass" placeholder="Password"  class="form-control">
+              <input type="password" name="pass" placeholder="Password"  class="form-control">
             </div>
             <button type="submit" class="btn btn-success" name="vhod">Войти</button>
           </form>
-          <?php 
-         // }
-          ?>
+          <script>
+          
+            //$('form .navbar-right').addClass('none');
+          </script>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
