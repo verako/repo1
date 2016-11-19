@@ -61,6 +61,7 @@
           </ul>
           <?php 
            //session_start();
+          //hvjhddf
           connect();
           if(isset($_SESSION["ruser"])){
             echo "<h4>Добро пожаловать, <span>".$_SESSION['ruser']."! </span><a class='exit' href='pages/logout.php'>Выйти</a></h4>";
