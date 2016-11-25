@@ -70,15 +70,26 @@ function connect(){
  
  function getComments($hotelid){
  	$res=mysql_query('select *from Comments where hotelid='.$hotelid);
+ 	$i=1;
  	while ($row=mysql_fetch_array($res,MYSQL_NUM)) {
- 	// 	$file = fopen("images/blob.jpg","w");
-		// echo fwrite($file,$row[5]);
-		// fclose($file);
- 		// $pic='blob.php';
- 		// if ($row[5]="") {
- 		// 	$pic='foto.png';
- 		// }
- 		echo "<dt><div><img src='images/foto.png' style='width:50px'></div><div>".$row[3]."&nbsp;".$row[4]."</div></dt>";
+ 	
+ 		$resi=mysql_query('select avatar from users 
+		where login="'.$row[3].'"');
+		$img="images/foto.png";
+ 		if ($rowi=mysql_fetch_array($resi,MYSQL_NUM)){
+			$img="images/comment_logo".$i.".jpg";
+			$file=fopen($img, "w");
+			fwrite($file,$rowi[0]);
+			if (filesize($img)<1) $img="images/foto.png";
+			fclose($file);
+			mysql_free_result($resi);
+			}
+		
+ 		echo "<dt><div><img src=".$img." style='width:50px'></div>";
+			
+		echo "<div>".$row[3]."&nbsp;".$row[4]."</div></dt>";
  		echo "<dh><div>".$row[2]."</div></dh>";
+ 		$i++;
  	}
+ 	mysql_free_result($res);
  }

@@ -94,7 +94,7 @@
         <div class="left col-lg-2  col-md-2 col-sm-2 col-xs-12" style="margin-left: 20px">
             <div style="margin-top: 70px"><h4>Цена за номер:</h4></div>
             <div><h4><?php 
-                echo $row[3];
+                echo $row[3]."$";
             ?></h4></div>
             <div><h4></h4></div>
             <div id="stars">
