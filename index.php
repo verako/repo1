@@ -33,8 +33,7 @@
   <body>
     <?php 
     $page=(isset($_GET['page']))?$_GET['page']:"1";
-    //session_start();
-    include_once('pages/functions.php');
+    include_once('pages/classes.php');
     
     ?>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -1,14 +1,23 @@
 <div class="container">
 	<?php 
-	if (isset($_POST['adduser'])) {
-		if (register($_POST['login'],$_POST['pass'],$_POST['email'],$_FILES['avatar']['tmp_name'])) {
-			echo "<h3 style='color:green;'>OK</h3>";
+	if (isset($_REQUEST['adduser'])) {
+		$login=trim($_REQUEST['login']);
+		$pass=trim($_REQUEST['pass']);
+		if ($login==""|| $pass=="") {
+			echo "Не заполнены поля";
+			exit();
 		}
+		if (is_uploaded_file($_FILES['avatar']['tmp_name'])) {
+			move_uploaded_file($_FILES['avatar']['tmp_name'], 'images/'.$_FILES['avatar']['name']);
+			$path='images/'.$_FILES['avatar']['name'];
+		}
+		$customer=new Customer($login,$pass,$path);
+		$customer->IntoDb();
 	
 	}
 	else{
 	?>
-	<form action="index.php?page=3" method="post" enctype="multipart/form-data">
+	<form action="index.php?page=4" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="login">Login</label>
 			<input type="text" name="login" class="form-control">
@@ -21,10 +30,10 @@
 			<label for="pass2">Confirm password</label>
 			<input type="password" name="pass2" class="form-control">
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="email">Email adres</label>
 			<input type="email" name="email" class="form-control">
-		</div>
+		</div> -->
 		<div class="form-group">
 			<label for="file">Foto</label>
 			<input type="file" name="avatar" class="form-control">
