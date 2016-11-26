@@ -8,7 +8,7 @@
 	}
 	else{
 	?>
-	<form action="index.php?page=4" method="post" enctype="multipart/form-data">
+	<form action="index.php?page=3" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="login">Login</label>
 			<input type="text" name="login" class="form-control">
@@ -31,6 +31,7 @@
 		</div>
 		<button type="submit" class="btn btn-primary" name="adduser">Register</button>
 	</form>
+	<br>
 	<?php 
 	}
 	?>
