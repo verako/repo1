@@ -16,7 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./Bootstrap/jumbotron.css" rel="stylesheet">
-   <!--  <link rel="stylesheet" href="css/jquery.lightbox-0.5.css"> -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-3.1.0.min.js"></script>
     
@@ -104,7 +104,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <script src="./Jumbotron Template for Bootstrap_files/jquery.min.js"></script>
     <script src="./Jumbotron Template for Bootstrap_files/bootstrap.min.js"></script> -->
-   <!--  <script src="js/jquery-1.11.3.min.js"></script> -->
+    
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   
   </body>
