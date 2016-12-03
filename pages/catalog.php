@@ -41,6 +41,7 @@
                 </div>
           </div>
         </div>
+        
         <div class="left col-lg-5  col-md-5 col-sm-12 col-xs-12">
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
@@ -90,27 +91,64 @@
       </div>
     </div>
     <div class="container marketing">
-
+      
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-4">
+        <?php 
+         
+         // $item=Item::fromDb(1);
+          //$item->Draw();
+         ?>
+        <form action="index.php?page1" method="post" >
+
+          <!-- <select name="catid" class='pull-right'> -->
+            <?php 
+            include_once('pages/lists.html');
+            // $pdo=Tools::connect();
+            // $ps=$pdo->prepare('select * from categories');
+            // $ps->execute();
+            // while ($row=$ps->fetch()) {
+            //   echo "<option value='".$row['id']."'>".$row['category']."</option>";
+            // }
+
+
+            ?>
+         <!--  </select> -->
+         <!--  <select name="subid" class='pull-right'> -->
+            <?php 
+            // $ps1=$pdo->prepare('select * from subcategories');
+            // $ps1->execute();
+            // while ($row=$ps1->fetch()) {
+            //   echo "<option value='".$row['id']."'>".$row['sucategory']."</option>";
+            //}
+            
+            ?>
+          <!-- </select> -->
+          <?php 
+            $items=Item::GetItems();
+            foreach ($items as $i) {
+              $i->Draw();
+            }
+          ?>
+        </form>
+       <!--  <div class="col-lg-4">
           <img class="img-responsive" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        </div> --><!-- /.col-lg-4 -->
+        <!-- <div class="col-lg-4">
           <img class="img-responsive" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
           <h2>Heading</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        </div> --><!-- /.col-lg-4 -->
+        <!-- <div class="col-lg-4">
           <img class="img-responsive" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div> --><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 

@@ -12,13 +12,12 @@
     <title>Shop</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./Bootstrap/jumbotron.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link href="css/style.css" rel="stylesheet">
-    <script src="js/jquery-3.1.0.min.js"></script>
+    
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -34,6 +33,7 @@
     <?php 
     $page=(isset($_GET['page']))?$_GET['page']:"1";
     include_once('pages/classes.php');
+    Tools::SetParam('localhost','root','123456','shop');
     
     ?>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -100,13 +100,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    
     <!-- <script src="./Jumbotron Template for Bootstrap_files/jquery.min.js"></script>
     <script src="./Jumbotron Template for Bootstrap_files/bootstrap.min.js"></script> -->
-    
+    <!--<script src="js/jquery-3.1.0.min.js"></script>-->
     <script src="js/jquery-1.12.4.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   
   </body>

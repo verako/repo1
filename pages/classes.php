@@ -98,4 +98,40 @@ class Item{
 		$ps->execute($data);
 
 	}
+	function Draw(){
+		echo "<div class='col-sm-3' style='height:300px'>";
+		echo "<h4 style=font-size:16pt>".$this->itemname."</h4>";
+		echo "<div><img src='".$this->imagepath."' height='100px' style='max-width:150px'><span class='pull-right' style='font-size:18pt'>".$this->pricesale."</span></div>";
+		echo "<div style='overflow:hidden;height:50px'>".$this->info."</div>";
+		echo "<div><a class='btn btn-success' href='index.php?page=1&cart=".$this->id."'>В корзину</a><a class='btn btn-success' href='pages/iteminfo.php?item=".$this->id."'>Подробней</a></div>";
+		echo "</div>";
+	}
+	static function fromDb($id){
+		$item=null;
+		try{
+			$pdo=Tools::connect();
+			$ps=$pdo->prepare('select * from Items where id=?');
+			$ps->execute(array($id));
+			$row=$ps->fetch();
+			$data=array('id'=>$row['id'],'itemname'=>$row['itemname'],'catid'=>$row['catid'],'subid'=>$row['subid'],'pricein'=>$row['pricein'],'pricesale'=>$row['pricesale'],'info'=>$row['info'],'rate'=>$row['rate'],'imagepath'=>$row['imagepath'],'action'=>$row['action']);
+			$item=new Item($data);
+			return $item;
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+			return false;
+		}
+	}
+	static function GetItems(){
+		$pdo=Tools::connect();
+		$ps=$pdo->prepare('select * from items');
+		$items=array();
+		$ps->execute();
+		while ($row=$ps->fetch()) {
+			$data=array('id'=>$row['id'],'itemname'=>$row['itemname'],'catid'=>$row['catid'],'subid'=>$row['subid'],'pricein'=>$row['pricein'],'pricesale'=>$row['pricesale'],'info'=>$row['info'],'rate'=>$row['rate'],'imagepath'=>$row['imagepath'],'action'=>$row['action']);
+			$i=new Item($data);
+			$items[]=$i;
+		}
+		return $items;
+	}
 }
