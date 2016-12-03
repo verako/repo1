@@ -17,7 +17,11 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link href="css/style.css" rel="stylesheet">
+<<<<<<< HEAD
     
+=======
+    <script src="js/jquery-3.1.0.min.js"></script>
+>>>>>>> 3f6bcc3db202bdf5ddd1444372e5843045498432
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -104,10 +108,14 @@
     
     <!-- <script src="./Jumbotron Template for Bootstrap_files/jquery.min.js"></script>
     <script src="./Jumbotron Template for Bootstrap_files/bootstrap.min.js"></script> -->
+<<<<<<< HEAD
     <!--<script src="js/jquery-3.1.0.min.js"></script>-->
     <script src="js/jquery-1.12.4.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
+=======
+   <!--  <script src="js/jquery-1.11.3.min.js"></script> -->
+>>>>>>> 3f6bcc3db202bdf5ddd1444372e5843045498432
     <script src="js/script.js"></script>
   
   </body>

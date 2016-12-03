@@ -1,6 +1,7 @@
 html, body{
 	height: 100%;
 	margin: 0;
+<<<<<<< HEAD
 	padding: 0;
 }
 body{
@@ -14,6 +15,21 @@ body{
     background-color: #D11102;
     border-color: #FE7D3A;
 }
+=======
+	padding: 10px;
+}
+body{
+	padding-top: 50px
+}
+.navbar-brand{
+	margin-top: -10px;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open.dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #D11102;
+    border-color: #FE7D3A;
+}
+>>>>>>> 3f6bcc3db202bdf5ddd1444372e5843045498432
 .btn-success{
 	background-color: #FE7D3A;
     border-color: #D11102;
@@ -24,6 +40,7 @@ footer{
 	padding: 0;
 	height: 100px;
 	background-color: #FE7D3A;
+<<<<<<< HEAD
 }
 
 .marketing{
@@ -48,3 +65,23 @@ footer{
     font-weight: normal;
     color: #ffffff;
 }
+=======
+}
+.carousel {
+    width: 40%;
+    float: left;
+}
+.marketing{
+	padding-top: 15px
+}
+.btn-primary {
+    color: #fff;
+    background-color: #FE7D3A;
+    border-color: #D11102;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: #fff;
+   background-color: #D11102;
+    border-color: #FE7D3A;
+}
+>>>>>>> 3f6bcc3db202bdf5ddd1444372e5843045498432
