@@ -1,4 +1,4 @@
-<form>
+
 	<select name="catid" id="catid" onchange='GetSub(this.value)'>
 		<?php 
 			$pdo=Tools::connect();
@@ -9,7 +9,7 @@
             }
         ?>
 	</select>
-</form>
+
 <script>
 	function GetSub(cat){
 		if(cat==""){
